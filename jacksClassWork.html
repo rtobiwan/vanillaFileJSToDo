@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png">
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png">
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>PW Execise Template</title>
+    <link href="http://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="http://pw.sabio.la/api/js/site"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0px 10px;
+        }
+
+        /* Remove extra left and right margins, due to padding in columns */
+        .row {
+            margin: 0 -5px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* this adds the "card" effect */
+            padding: 16px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            margin-left: 15px;
+            margin-right: 10px;
+
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+
+        /* Responsive columns - one column layout (vertical) on small screens */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+
+            }
+        }
+    </style>
+</head>
+
+<body class="sabio" data-ins="pw-00">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"></nav>
+
+    <!-- ⭐ Element to be appended -->
+    <div id="htmlOfPeople" class="row"></div>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer class="do-not-remove container-fluid footer mx-auto  fb-targert sabio">
+        <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+
+    <!-- Please complete this exercise:
+        1. Create an array called people of object person
+           people should have at least 5 items
+        2. object person should have an id, first name, last name, age, address
+        3. address should be an object of street, city, state, country, zip
+        4. create a html template for person
+        5. loop through people and append them to the view in html -->
+
+    <script>
+
+        var people = [{
+            id: 1,
+            fName: 'Alejandrina',
+            lName: 'Amourette',
+            age: 10,
+            address: {
+                street: "1 Birch St",
+                city: "Miami",
+                state: "FL",
+                country: "United States",
+                zip: 11111
+            }
+        },
+        {
+            id: 2,
+            fName: 'Thales',
+            lName: 'Raphael',
+            age: 20,
+            address: {
+                street: "22 Elm St",
+                city: "Paolo",
+                state: "AK",
+                country: "United States",
+                zip: 22222
+            }
+        },
+        {
+            id: 3,
+            fName: 'Jaime',
+            lName: 'Rosas',
+            age: 30,
+            address: {
+                street: "333 You St",
+                city: "Bakers",
+                state: "MD",
+                country: "United States",
+                zip: 33333
+            }
+        },
+        {
+            id: 4,
+            fName: 'Carmen',
+            lName: 'Sandiego',
+            age: 40,
+            address: {
+                street: "4444 Cool St",
+                city: "Playa",
+                state: "AL",
+                country: "United States",
+                zip: 44444
+            }
+        },
+        {
+            id: 5,
+            fName: 'Joey',
+            lName: 'Raphael',
+            age: 50,
+            address: {
+                street: "55555 Wow St",
+                city: "Von",
+                state: "OK",
+                country: "United States",
+                zip: 55555
+            }
+        },
+        ]
+
+    </script>
+    <script id="candidateCode">
+        sabio.page.startUp = () => {
+
+            console.log(people);
+
+
+            sabio.page.appendToHtml(people);
+        };
+
+        //sabio.page.appendToHtml() = people.forEach(array => sabio.page.displayPerson(array[prop]));
+
+        sabio.page.appendToHtml = (array) => {
+            for (let i = 0; i < array.length; i++) {
+                console.log(array[i]);
+                sabio.page.displayPerson(array[i]);
+            }
+        }
+        // }
+
+        sabio.page.displayPerson = function (person) {
+            var $template = $($('#templateHtml').html());
+            var $cloneTemplate = $template.clone();
+            $cloneTemplate.find('.id').text('id: ' + person.id);
+            $cloneTemplate.find('.fName').text('First Name: ' + person.fName);
+            $cloneTemplate.find('.lName').text('Last Name: ' + person.lName)
+            $cloneTemplate.find('.age').text('Age: ' + person.age)
+            $cloneTemplate.find('.address').text('Address: ' + person.address.street + ", " + person.address.city + ", " + person.address.state + ", " + + person.address.country + ", " + person.address.zip)
+            $('#htmlOfPeople').append($cloneTemplate);
+        }
+
+
+
+    </script>
+    <script type="text/html" id="templateHtml">
+
+        <div class="row">
+                <div class="col-12">
+                  <div class="card"style="width: 18rem;">
+                    <header style="text-align:left;">Person: </header>
+                    <ul class="list-group list-group-flush" style="text-align:center;">
+                      <li id= "" class="list-group-item id">id: </li>
+                      <li class="list-group-item fName">First Name: </li>
+                      <li class="list-group-item lName">Last Name: </li>
+                      <li class="list-group-item age">Age: </li>
+                      <li class="list-group-item address">Address: </li><br>
+                    </ul></div>
+                </div>
+                </div>
+              </div>
+
+        </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+</body>
+
+</html>

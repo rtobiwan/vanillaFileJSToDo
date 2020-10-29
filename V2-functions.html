@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+
+        // V1 - Arrays Parameters 
+        /*  makeSandwichWith ________. -Parameter
+              Get one slice of bread.
+              Add _______. - PARAMETER   
+              Put a slice of bread on top.
+       // declare/teach the step by step recipe to make a sandwich 
+      
+          makeSandwichWith __ham___. // call/ask to make a sandwich */
+
+        /* function makeSandwichWith(filling) //- Parameter
+         {
+     
+             Get one slice of bread;
+             Add filling; //- parameter
+             Put a slice of bread on top;
+     
+         } // declare/teach the step by step recipe to make a sandwich 
+     
+         makeSandwichWith('ham')// argument; // call/ask to make a sandwich with... */
+
+
+
+        // Version 2 - functions
+        // Select a place to store our data = Declare a variable to store the data.
+        var todos = [ "item 1", "item 2", "item 3" ]; // We've created an Array and assigned it to variable named "todos".
+
+        // Create a function to display/print the data. First, outline the structure of our function declaration:
+        function displayToDos()
+        {
+            console.log("My ToDo's:", todos);
+        }
+
+        // Create a function to Add a new item to the To Do list = todos array:
+        function addTodo(todo)  // We need to provide a value for this todo parameter. addTodo("New Item")
+        {
+            todos.push(todo);
+            displayToDos();
+        }
+
+        // Create a function to Change/Edit an item already on the To Do list = todos array:
+        function changeTodo(position, newValue)
+        {
+            todos[ position ] = newValue;
+            displayToDos();
+        }
+
+        // Create a function to Delete an item already on the To Do list = todos array:
+        function deleteTodo(position)
+        {
+            todos.splice(position, 1); // Always just one item for the delete function so no need for a second parameter, we can hardcode it in.
+            displayToDos();
+        }
+
+        // Functions and Variables:
+
+        var myName = "Tobi";
+
+        function sayName()
+        {
+            var secret = 'watchandcode';
+            console.log(myName);
+            // console.log(secret); ✅ correct syntax, read below 👇
+        }
+
+        sayName(); // This logs/displays fine.
+        console.log(secret); // This won't log. It has to be inside the function block where secret is defined. *If we're inside of a function block, we can look out and see/find the data, but the opposite isn't true. If we're outside of a function block , we can't look in and find/see data inside. This console.log should be inside of the sayName function block. 
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
